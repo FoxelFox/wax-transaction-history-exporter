@@ -1,0 +1,26 @@
+{
+  "name": "wax-transaction-history-exporter",
+  "version": "1.0.0",
+  "description": "Gets the full transaction history from an account and stores it as csv",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/main.js",
+    "build-start": "tsc && node dist/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FoxelFox/wax-transaction-history-exporter.git"
+  },
+  "author": "André Furchner",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FoxelFox/wax-transaction-history-exporter/issues"
+  },
+  "homepage": "https://github.com/FoxelFox/wax-transaction-history-exporter#readme",
+  "dependencies": {
+    "@types/node": "^16.11.6",
+    "axios": "^0.24.0",
+    "typescript": "^4.4.4"
+  }
+}
