@@ -46,3 +46,17 @@ export interface Receipt {
 	receiver: string
 	recv_sequence: number
 }
+
+export interface CSVRecord {
+	type: "Einnahme" | "Ausgabe"
+	buy_amount?: string
+	buy_currency?: string
+	sell_amount?: string
+	sell_currency?: string
+	fee?: string
+	fee_currency?: string
+	exchange?: string
+	trade_group?: string
+	comment?: string
+	date: string
+}
