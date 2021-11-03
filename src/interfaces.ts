@@ -48,7 +48,7 @@ export interface Receipt {
 }
 
 export interface CSVRecord {
-	type: "Einnahme" | "Ausgabe"
+	type: "Einnahme" | "Ausgabe" | "Zinsen"
 	buy_amount?: string
 	buy_currency?: string
 	sell_amount?: string
