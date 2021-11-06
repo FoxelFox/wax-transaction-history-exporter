@@ -104,3 +104,4 @@ dist
 .tern-port
 /transactions.json
 /output.csv
+/trades.json

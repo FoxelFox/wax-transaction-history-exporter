@@ -48,7 +48,7 @@ export interface Receipt {
 }
 
 export interface CSVRecord {
-	type: "Einnahme" | "Ausgabe" | "Zinsen"
+	type: "Einnahme" | "Ausgabe" | "Einzahlung" | "Auszahlung" | "Zinsen" | "Trade"
 	buy_amount?: string
 	buy_currency?: string
 	sell_amount?: string
@@ -59,4 +59,46 @@ export interface CSVRecord {
 	trade_group?: string
 	comment?: string
 	date: string
+}
+
+export interface Market {
+	id: number
+	base_token: Token
+	quote_token: Token
+	min_buy: string // like '0.0001 AETHER'
+	min_sell: string // like '0.0001 DUST'
+	frozen: number
+	fee: number
+	last_price: number
+	volume24: number
+	volumeWeek: number
+	volumeMonth: number
+	change24: number // %
+	changeWeek: number // %
+}
+
+export interface Symbol {
+	name: string
+	precision: number
+}
+
+export interface Token {
+	contract: string
+	symbol: Symbol
+	str: string
+	supply?: number
+	maxSupply?: number
+	isuser?: string
+}
+
+export interface AlcorTrade {
+	_id: string
+	market: number
+	type: "buymatch" | "sellmatch"
+	trx_id: string // WAX trx_id
+	unit_price: number
+	ask: number
+	bid: number
+	bidder: string // WAX account
+	time: string // ISO Date String
 }
