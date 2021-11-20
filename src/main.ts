@@ -34,6 +34,13 @@ async function main () {
 
 	const records = trades.concat(transactions).sort((a, b) => a.date.localeCompare(b.date))
 
+	// map WAX to WAXP
+	for (const line of records) {
+		line.buy_currency = line.buy_currency === "WAX" ? "WAXP" : line.buy_currency;
+		line.sell_currency = line.sell_currency === "WAX" ? "WAXP" : line.sell_currency;
+	}
+
+
 	await csvWriter.writeRecords(records);
 
 }
